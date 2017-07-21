@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  @Output() navToggled = new EventEmitter();
+  navOpen = false;
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    // If nav is open after routing, close it
+    this.router.events
+      .filter(event => event instanceof NavigationStart && this.navOpen)
+      .subscribe(event => this.toggleNav());
   }
 
+  toggleNav() {
+    this.navOpen = !this.navOpen;
+    this.navToggled.emit(this.navOpen);
+  }
 }

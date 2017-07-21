@@ -3,6 +3,7 @@
 --------------------*/
 
 @import '../../assets/scss/partials/layout.vars';
+@import '../../assets/scss/partials/fonts.vars';
 
 /*-- Navigation --*/
 
@@ -128,4 +129,10 @@
       text-decoration: underline;
     }
   }
+  .header-page-siteTitle {
+    a {
+        font: 100% $headerFont;
+    }
+  }
 }
+

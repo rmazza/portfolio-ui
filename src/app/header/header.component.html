@@ -1,6 +1,6 @@
 <header id="header" class="header">
   <div class="header-page bg-primary">
-    <a class="toggle-offcanvas bg-primary"><span></span></a>
+    <a class="toggle-offcanvas bg-primary" (click)="toggleNav()"><span></span></a>
     <h1 class="header-page-siteTitle">
       <a routerLink="/">PortfolioUi</a>
     </h1>
@@ -16,3 +16,13 @@
     </ul>
   </nav>
 </header>
+
+
+
+<!-- The <nav> element contains an unordered list of our routes. 
+  For now, we only have the "Events" link (which routes to our Home component). 
+  We'll use the routerLink and routerLinkActive directives on an anchor tag to handle links to our routes. 
+  We'll specify the route we want to navigate to and the class to be applied when that route is active.
+
+We need to add [routerLinkActiveOptions] to ensure an exact match to the / path in the case of the root route. 
+Otherwise, this link will receive the active class whenever any route containing / is active. -->

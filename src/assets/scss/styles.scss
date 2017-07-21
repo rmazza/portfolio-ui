@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* src/assets/scss/styles.scss */
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// partials
+@import 'partials/layout.vars';
+@import 'partials/responsive.partial';
+@import 'partials/fonts.vars';
+
+// global styles
+@import 'base';
